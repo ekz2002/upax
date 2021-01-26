@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CarouselComponent } from './app-1/carousel/carousel.component';
 import { SliderCarouselModule } from 'slider-carousel';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SliderCarouselModule } from 'slider-carousel';
     HttpClientModule,
     FormsModule,
     CommonModule,
-    SliderCarouselModule
+    SliderCarouselModule,
+    SlickCarouselModule 
   ],
   providers: [EmpleadosService],
   bootstrap: [AppComponent]
