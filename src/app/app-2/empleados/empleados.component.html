@@ -1,0 +1,56 @@
+<html>
+    <body>
+        <div class="container" style="text-align: center; padding: 30px;">
+            <div class="row">
+                <div class="col"></div>
+                <div class="col-8" style="padding: 20px;">
+                    <h2 style="margin: auto">Empleados Upax</h2>
+                </div>
+                <div class="col"></div>
+            </div>
+            <div class="row" style="text-align: right;">
+                <div class="col"></div>
+                <div class="col-9 border rounded row mx-md-n4" style="text-align: center; padding: 15px;">
+                    <div class="col px-md-4">
+                        <input [(ngModel)]="addEmpleado.name" placeholder="Nombre" class="form-control">
+                    </div>
+                    <div class="col px-md-4">
+                        <input [(ngModel)]="addEmpleado.last_name" placeholder="Apellido" class="form-control">
+                    </div>
+                    <div class="col px-md-4">
+                        <input [(ngModel)]="addEmpleado.birthday" class="form-control">
+                    </div>
+                    
+                    <div class="col px-md-4">
+                        <button class="btn btn-danger" (click)="newEmpleado()">Nuevo Empleado</button>
+                    </div>
+                </div>
+                <div class="col"></div>
+            </div>
+            <div class="row">
+                <div class="col"></div>
+                <div class="col-8">
+                    <table class="table table-striped" style="text-align: center">
+                        <thead>
+                            <tr>
+                                <th class="hidden">Id</th>
+                                <th >Nombre</th>
+                                <th >Apellido</th>
+                                <th >Fecha de Nacimiento</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let e of empleados.data.employees">
+                                <th>{{ e.id }}</th>
+                                <th>{{ e.name }}</th>
+                                <th>{{ e.last_name }}</th>
+                                <th>{{ e.birthday | date:'YYYY/MM/dd'}}</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>        
+                <div class="col"></div>
+            </div>
+        </div>
+    </body>
+</html>
